@@ -1,3 +1,43 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+Sport Calendar
+{% endblock %}
+
+{% block content %}
+<h2>Sport Calendar</h2>
+{% regroup events by date_start|date:"Y-m" as grouped_events %}
+{% for month, month_events in grouped_events %}
+    <h3>{{ month|date:"F Y" }}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Club</th>
+                <th>Disciplines</th>
+                <th>Date</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in month_events %}
+            <tr>
+                <td>{{ event.name }}</td>
+                <td>{{ event.club.name }}</td>
+                <td>{{ event.disciplines.all|join:", " }}</td>
+                <td>{{ event.date_start }}{% if event.date_end %} - {{ event.date_end }}{% endif %}</td>
+                <td><a href="{{ event.link }}">More Info</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endfor %}
+{% endblock %}
+
+
+
+
 <!DOCTYPE html>
    <html lang="en">
    <head>

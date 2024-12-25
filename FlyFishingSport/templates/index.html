@@ -5,31 +5,19 @@ Sport Calendar
 {% endblock %}
 
 {% block content %}
-<h2>Sport Calendar</h2>
-{% regroup events by date_start|date:"Y-m" as grouped_events %}
-{% for month, month_events in grouped_events %}
-    <h3>{{ month|date:"F Y" }}</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Event</th>
-                <th>Club</th>
-                <th>Disciplines</th>
-                <th>Date</th>
-                <th>Link</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for event in month_events %}
-            <tr>
-                <td>{{ event.name }}</td>
-                <td>{{ event.club.name }}</td>
-                <td>{{ event.disciplines.all|join:", " }}</td>
-                <td>{{ event.date_start }}{% if event.date_end %} - {{ event.date_end }}{% endif %}</td>
-                <td><a href="{{ event.link }}">More Info</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endfor %}
+<h1>Предстоящие события</h1>
+    <ul>
+        {% for event in upcoming_events %}
+            <li>
+                <strong>{{ event.name }}</strong><br>
+                Дата: {{ event.date_start }}<br>
+                Место: {{ event.location }}
+            </li>
+        {% empty %}
+            <li>Нет предстоящих событий</li>
+        {% endfor %}
+    </ul>
+
+    <a class="fta-menu-buttom" href="{% url 'event_calendar' %}"> Весь календарь </a>
+
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Club(models.Model):
     name = models.CharField(max_length=255)
