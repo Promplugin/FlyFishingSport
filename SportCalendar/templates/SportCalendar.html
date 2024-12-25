@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <title>Sport Calendar</title>
+   </head>
+   <body>
+       <h1>Sport Calendar</h1>
+       {% regroup events by date_start|date:"Y-m" as grouped_events %}
+       {% for month, month_events in grouped_events %}
+           <h2>{{ month|date:"F Y" }}</h2>
+           <table>
+               <thead>
+                   <tr>
+                       <th>Event</th>
+                       <th>Club</th>
+                       <th>Disciplines</th>
+                       <th>Date</th>
+                       <th>Link</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   {% for event in month_events %}
+                   <tr>
+                       <td>{{ event.name }}</td>
+                       <td>{{ event.club.name }}</td>
+                       <td>{{ event.disciplines.all|join:", " }}</td>
+                       <td>{{ event.date_start }}{% if event.date_end %} - {{ event.date_end }}{% endif %}</td>
+                       <td><a href="{{ event.link }}">More Info</a></td>
+                   </tr>
+                   {% endfor %}
+               </tbody>
+           </table>
+       {% endfor %}
+   </body>
+   </html>

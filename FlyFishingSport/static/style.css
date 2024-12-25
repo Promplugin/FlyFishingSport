@@ -1,0 +1,26 @@
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+    font: 400 24px/44px IBM Plex Serif;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.logo {
+    height: 70px;
+}
+.contact-link {
+    text-decoration: none;
+    color: #000;
+}
