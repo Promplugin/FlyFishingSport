@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-nb$275!nkatp7tu1xs@s$&twocm0dhf_jn5r$=83^+8xysgxo%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'false'
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35']
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35','flyfishingsport.ru']
 
 
 # Application definition
