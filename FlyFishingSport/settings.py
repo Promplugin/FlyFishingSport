@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-nb$275!nkatp7tu1xs@s$&twocm0dhf_jn5r$=83^+8xysgxo%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'true'
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
+DEBUG = 'false'
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35','flyfishingsport.ru']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
