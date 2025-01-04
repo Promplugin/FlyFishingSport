@@ -18,6 +18,7 @@ COPY . /app/
 # Собираем статические файлы
 RUN python manage.py collectstatic --noinput
 
+
 # Открываем порт
 EXPOSE 8000
 
