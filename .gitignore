@@ -1,0 +1,4 @@
+*.log
+build/
+secret_config.yml
+*.env
