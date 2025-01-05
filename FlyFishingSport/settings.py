@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-nb$275!nkatp7tu1xs@s$&twocm0dhf_jn5r$=83^+8xysgxo%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True'
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'localhost', '127.0.0.1:8000', '92.118.113.162', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35','http://flyfishingsport.ru', 'https://flyfishingsport.ru', 'backend-46824bc8-298f-4fa1-8bf5-0b79181cf83a-http']
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'localhost', '127.0.0.1:8000', '92.118.113.162', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35', 'flyfishingsport.ru', 'http://flyfishingsport.ru', 'https://flyfishingsport.ru', 'backend-46824bc8-298f-4fa1-8bf5-0b79181cf83a-http']
 CSRF_TRUSTED_ORIGINS = ['https://promplugin-flyfishingsport-cad9.twc1.net', 'http://flyfishingsport.ru', 'https://flyfishingsport.ru', 'http://127.0.0.1']
 
 # Application definition
