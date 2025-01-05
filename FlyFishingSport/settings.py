@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-nb$275!nkatp7tu1xs@s$&twocm0dhf_jn5r$=83^+8xysgxo%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'False'
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35','http://flyfishingsport.ru', 'https://flyfishingsport.ru', 'backend-46824bc8-298f-4fa1-8bf5-0b79181cf83a-http']
+DEBUG = 'True'
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'localhost', '127.0.0.1:8000', '92.118.113.162', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35','http://flyfishingsport.ru', 'https://flyfishingsport.ru', 'backend-46824bc8-298f-4fa1-8bf5-0b79181cf83a-http']
 CSRF_TRUSTED_ORIGINS = ['https://promplugin-flyfishingsport-cad9.twc1.net', 'http://flyfishingsport.ru', 'https://flyfishingsport.ru', 'http://127.0.0.1']
 
 # Application definition
@@ -80,8 +80,11 @@ WSGI_APPLICATION = 'FlyFishingSport.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'FlyFishingSport_DB',
+        'USER': 'dbadmin',
+        'PASSWORD': 'F7$mK2@bL9#q',
+        'HOST': '92.118.113.162',
     }
 }
 
