@@ -3,3 +3,4 @@ build/
 secret_config.yml
 *.env
 env/
+*.pyc
