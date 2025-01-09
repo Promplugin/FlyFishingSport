@@ -3,4 +3,3 @@ build/
 secret_config.yml
 *.env
 env/
-key.txt
