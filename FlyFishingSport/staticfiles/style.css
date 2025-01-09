@@ -1,0 +1,42 @@
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+    font: 400 24px/44px IBM Plex Serif;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+header {
+    display: flex;
+    flex: 1 1 0;
+    gap: 10px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-right: 8%;
+    margin-left: 8%;
+    padding: 0;
+    justify-content: center;
+    font: 400 24px/44px IBM Plex Serif;
+
+}
+
+.container {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+}
+.logo {
+    height: 150px;
+}
+.contact-link {
+    text-decoration: none;
+    color: #000;
+}
