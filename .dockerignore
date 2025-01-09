@@ -2,3 +2,7 @@ __pycache__
 *.pyc
 .env
 .git
+.idea
+*.log
+env/
+key.txt

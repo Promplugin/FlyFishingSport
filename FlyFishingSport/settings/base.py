@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
-
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,12 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nb$275!nkatp7tu1xs@s$&twocm0dhf_jn5r$=83^+8xysgxo%'
+with open('key.txt') as f: SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'true'
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
-
+DEBUG = True
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'localhost', '127.0.0.1:8000', '92.118.113.162', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35', 'flyfishingsport.ru', 'http://flyfishingsport.ru', 'backend-46824bc8-298f-4fa1-8bf5-0b79181cf83a-http']
 
 # Application definition
 
@@ -45,6 +41,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,8 +76,14 @@ WSGI_APPLICATION = 'FlyFishingSport.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'FlyFishingSport_DB',
+        'USER': 'dbadmin',
+        'PASSWORD': 'F7$mK2@bL9#q',
+        'HOST': '92.118.113.162',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
     }
 }
 
@@ -109,9 +112,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
+FILE_CHARSET = 'utf-8'
+DEFAULT_CHARSET = 'utf-8'
+
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -122,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "FlyFishingSport/static"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
