@@ -24,7 +24,7 @@ with open('key.txt') as f: SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'localhost', '127.0.0.1:8000', '92.118.113.162', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35', 'flyfishingsport.ru', 'http://flyfishingsport.ru', 'backend-46824bc8-298f-4fa1-8bf5-0b79181cf83a-http']
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'localhost', '127.0.0.1:8000', '92.118.113.162', '[::1]','promplugin-flyfishingsport-cad9.twc1.net','188.225.27.35', 'flyfishingsport.ru', 'http://flyfishingsport.ru', 'backend-46824bc8-298f-4fa1-8bf5-0b79181cf83a-http', 'http://0.0.0.0:8080/', '0.0.0.0:8080']
 
 # Application definition
 
