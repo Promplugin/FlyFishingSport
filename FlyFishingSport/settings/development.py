@@ -3,11 +3,9 @@ from .base import *
 
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 
-INSTALLED_APPS += [
-    'debug_toolbar',
-]
 
 DATABASES = {
     'default': {
@@ -16,9 +14,6 @@ DATABASES = {
     }
 }
 
-MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
 
 INTERNAL_IPS = [
     '127.0.0.1',
