@@ -3,3 +3,5 @@ build/
 secret_config.yml
 *.env
 env/
+*.pyc
+__pycache__
